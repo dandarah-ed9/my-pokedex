@@ -58,14 +58,13 @@ export default function LoginScreen() {
             Turma DS - ETE · Dandara
           </Text>
           // global/themes.tsx (lightTheme)
-            accent: '#2c6f8f',
+            accent: '#4FC3F7',
       </View>
       
       <View style={styles.boxMid}>
       <Text style={styles.titleInput}>E-mail</Text>
       <View style={styles.boxInput}>
-      <TextInput
-          value={email}
+      <TextInput value={email} 
           onChangeText={setEmail}
           placeholder="seuemail@exemplo.com"
           keyboardType="email-address"
@@ -73,6 +72,9 @@ export default function LoginScreen() {
           style={styles.textInput}
         />
       </View>
+      <Text>
+        Voce digitou: {email} ({email.length}letras)
+      </Text>
       <Text style={styles.titleInput}>Senha</Text>      
       <View style={styles.boxInput}>
       <TextInput
