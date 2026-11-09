@@ -238,13 +238,18 @@ export default function PokemonListScreen() {
 
       <View style={styles.actionsRow}>
         <TouchableOpacity
-          style={[styles.actionButton,
-            {backgroundColor: theme.colors.primary}]}
-          onPress ={()=> navigation.navigate('About')}>
-          onPress={() => setShowOnlyFavorites((prev) => !prev)} > *
+          style={[styles.actionButton, styles.favoritesButton]}
+          onPress={() => setShowOnlyFavorites((prev) => !prev)}
+        >
           <Text style={styles.actionButtonText}>
+            {showOnlyFavorites ? 'Mostrar Todos' : 'Mostrar Favoritos'}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+        style = {[styles.actionButton, { backgroundColor: theme.colors.primary}]}
+          onPress= {()=> navigation.navigate('About')}>
+          <Text style = {styles.actionButtonText}>
             Sobre
-            {showOnlyFavorites ? 'Mostrar Todos' : 'Mostrar Favoritos'} *
           </Text>
         </TouchableOpacity>
       </View>
